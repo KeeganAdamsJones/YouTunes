@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@page import="java.util.List"%>
+<%@page import="java.util.Iterator"%>
+
+
+
 
 <!-- 
 Keegan Jones
@@ -25,17 +31,26 @@ CSD - 460 Capstone
 	<title>Welcome to YouTunes!</title>
 	</head>
 	
+	<link
+		rel="stylesheet" href="site.css">
+		
+		<!-- *** example for linking to a bootstrap css if I choose to 
+		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+		crossorigin="anonymous"
+		-->
+		
+	
 	<body>
+		<h1 class="welcome">Welcome to</h1>
+			<div class='logo'>
+				<img src="images/youTunesLogo.jpeg" alt="YouTunes Logo" width="200" height="148">
+			</div>
 		<!-- Tie in the TopNav file and where I want it. -->
 		<jsp:include page="TopNav.jsp" flush="true" />
 	
 		<main>
-			<h1 class="fw-light">Welcome to</h1>
-			<div class='logo'>
-				<img src="images/youTunesLogo.jpeg">
-			</div>
-			<!-- *** Put in YouTunes Logo, About Us, Contact Us, Dropdown Menu-->
-				<p class="lead text-muted">Below you will find a selection of music. 
+				<p class="lead-text">Below you will find a selection of music. 
 					To add new music to your list, click on the 
 					"Add Now" button. To learn more about the selection click the "Details"
 					button.  You can also click the "View By" button for a drop down menu
@@ -48,7 +63,13 @@ CSD - 460 Capstone
 			
 
 		
-	</main>
+		</main>
+		
+		<!-- Page footer -->
+		<jsp:include page="Footer.jsp" flush="true" />
+		
+		<!-- JavaScript-->  
+		<jsp:include page="ScriptFooter.jsp" flush="true" />
 	
 	</body>
 </html>

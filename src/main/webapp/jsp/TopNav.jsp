@@ -3,31 +3,16 @@
 <!DOCTYPE html>
 <html>
 <header>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<div class="container-fluid">
-			<a class="navbar-brand" href="/">
-				<div class="logo-image">
-            		<img src="images/youTunesLogo.jpeg" class="img-fluid">
-            	</div>
-            </a>
-      	 </div>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarNav"
-				aria-controls="navbarNav" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-		<div>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="store?action=showArtists">Artists</a></li>
-					<li class="nav-item"><a class="nav-link" href="store?action=showAboutUs">About Us</a>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="store?action=showContactUs">Contact Us</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+	<div class="TopNav">
+		<a class="active" href="#home">Home</a>
+  		<a href="../artists/List.jsp">Artists</a>
+  			<!-- <a class="logo-image">
+            	<img src="images/youTunesLogo.jpeg" alt="YouTunes Logo" width="25" height="18" class="img-fluid">
+  			 -->
+  		<a href="../Contact.jsp">Contact Us</a>
+  		<a href="../About.jsp">About Us</a>
+	</div>
 </header>
+
+
 </html>
