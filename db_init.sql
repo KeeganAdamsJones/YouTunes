@@ -68,23 +68,17 @@ INSERT INTO artist(first_name, last_name)
 	
 	
 -- insert album statements
-INSERT INTO album(title, artist_id, genre, price, img_url, )
-	VALUES('Ten', (SELECT artist_id FROM artist WHERE last_name = 'Jam'), 'Rock', 39.95, '');
+INSERT INTO album(title, artist_id, genre, price, img_url)
+	VALUES('Ten', (SELECT artist_id FROM artist WHERE last_name = 'Jam'), 'Rock', 39.95, 'images/pearlJamTen.jpeg');
 	
-INSERT INTO album(title, artist_id, genre, price, img_url, )
-	VALUES('Tragic Kingdom', (SELECT artist_id FROM artist WHERE last_name = 'Doubt'), 'Pop', 35.95, '');
+INSERT INTO album(title, artist_id, genre, price, img_url)
+	VALUES('Tragic Kingdom', (SELECT artist_id FROM artist WHERE last_name = 'Doubt'), 'Pop', 35.95, 'images/noDoubtTragicKingdom.jpeg');
 	
-INSERT INTO album(title, artist_id, genre, price, img_url, )
-	VALUES('Eliminator', (SELECT artist_id FROM artist WHERE last_name = 'Top'), 'Blues', 29.95, '');
+INSERT INTO album(title, artist_id, genre, price, img_url)
+	VALUES('Eliminator', (SELECT artist_id FROM artist WHERE last_name = 'Top'), 'Blues', 29.95, 'images/zzTopEliminator.jpeg');
 	
-INSERT INTO album(title, artist_id, genre, price, img_url, )
-	VALUES('No Fences', (SELECT artist_id FROM artist WHERE last_name = 'Brooks'), 'Country', 39.95, '');
+INSERT INTO album(title, artist_id, genre, price, img_url)
+	VALUES('No Fences', (SELECT artist_id FROM artist WHERE last_name = 'Brooks'), 'Country', 39.95, 'images/garthBrooksNoFences.jpeg');
 	
-INSERT INTO album(title, artist_id, genre, price, img_url, )
-	VALUES('Home For Christmas', (SELECT artist_id FROM artist WHERE last_name = 'Grant'), 'Christian', 25.95, '');
-	
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
+INSERT INTO album(title, artist_id, genre, price, img_url)
+	VALUES('Home For Christmas', (SELECT artist_id FROM artist WHERE last_name = 'Grant'), 'Christian', 25.95, 'images/amyGrantHomeForChristmas.jpeg');

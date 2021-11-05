@@ -3,9 +3,10 @@
     
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
+<%@page import="youtunes.Album"%>
 
 
-
+<jsp:useBean id="albumDao" scope="application" class="youtunes.JdbcAlbumDao" />
 
 <!-- 
 Keegan Jones
@@ -34,7 +35,7 @@ CSD - 460 Capstone
 	<link
 		rel="stylesheet" href="site.css">
 		
-		<!-- *** example for linking to a bootstrap css if I choose to 
+		<!-- *** example for linking to a bootstrap css if I choose to do later. ***
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 		crossorigin="anonymous"
@@ -52,15 +53,51 @@ CSD - 460 Capstone
 		<main>
 				<p class="lead-text">Below you will find a selection of music. 
 					To add new music to your list, click on the 
-					"Add Now" button. To learn more about the selection click the "Details"
-					button.  You can also click the "View By" button for a drop down menu
-					to view by SongTitle, Artist, Album or Genre.</p>
-				<p>
-					<!-- *** Add link and button to  
-					<a href="store?action=newAlbum" class="btn btn-primary my-2">My Music</a>
-					-->
+					"Add New Album" button. 
 				</p>
+				
+				<!-- create Add New Album button -->
+				<p> 
+					<a href="store?action=newAlbum" class="btn btn-primary my-2">Add New Album</a>
+				</p>
+		
+		<div class="album py-5 bg-light">
+			<div class="container">
 			
+				<%
+					List<Album> albums = albumDao.list();
+					Iterator<Album> iterator = albums.iterator();
+					while (iterator.hasNext())
+					{
+						Album album = (Album)iterator.next();
+				%>
+				
+				<div class="row">
+					<div class="card">
+						
+						<div class="card-body">
+						    <img src="<%=album.getImgUrl()%>" alt="Album Cover Art" height="100" class="card-img-top" />
+						
+							<p class="album-text">
+							    
+								<span><%=album.getTitle()%></span>
+								<br />
+								<small class="text-muted"><em><%=album.getGenre()%></em></small>
+							</p>
+							
+							<div class="album-details">
+								<div class="btn-group">
+									<a href="store?action=albumDetails&albumId=<%=album.getAlbumId()%>" class="btn btn-sm btn-outline-secondary">Edit</a>
+									<a href="store?action=deleteAlbum&albumId=<%=album.getAlbumId()%>" class="btn btn-sm btn-outline-secondary">Delete</a>
+								</div>
+								<small class="text-muted">$<%=album.getPrice()%></small>
+							</div>
+						</div>
+					</div>
+				</div>
+				<% } %>
+		</div>
+	</div>
 
 		
 		</main>
@@ -68,8 +105,7 @@ CSD - 460 Capstone
 		<!-- Page footer -->
 		<jsp:include page="Footer.jsp" flush="true" />
 		
-		<!-- JavaScript-->  
-		<jsp:include page="ScriptFooter.jsp" flush="true" />
+	
 	
 	</body>
 </html>

@@ -1,10 +1,16 @@
-package youtunes.service;
+package youtunes;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-// JdbcManager.java. This is a helper class that we will use to connect to MySQL.
+/* 
+Keegan Jones
+
+JdbcManager.java. This is a helper class that we will use to connect to MySQL.
+*/
+
+
 
 public class JdbcManager 
 {

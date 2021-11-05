@@ -1,4 +1,8 @@
-package youtunes.model;
+package youtunes;
+
+/*
+ Keegan Jones
+ */
 
 public class Artist 
 {

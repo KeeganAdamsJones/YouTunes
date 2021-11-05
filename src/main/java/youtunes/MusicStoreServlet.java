@@ -9,16 +9,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import youtunes.Album;
+import youtunes.Artist;
+import youtunes.JdbcAlbumDao;
+import youtunes.JdbcArtistDao;
+
+
+
 /*
-import youtunes.model.Album;
-import youtunes.model.Artist;
-import youtunes.service.impl.JdbcAlbumDao;
-import youtunes.service.impl.JdbcArtistDao;
+ Keegan Jones
+ 
+  Servlet implementation class MusicStoreServlet
 */
-/**
- * Servlet implementation class MusicStoreServlet
- */
+
+// URL pattern was '/store/*'
 @WebServlet(name = "MusicStoreServlet", urlPatterns = { "/store/*" })
+
 public class MusicStoreServlet extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
@@ -58,6 +64,9 @@ public class MusicStoreServlet extends HttpServlet
 		{
 			switch (action) 
 			{
+				case "showHome":
+					url = base;
+					break;
 				case "showContactUs":
 					url = base + "Contact.jsp";
 					break;
@@ -119,7 +128,7 @@ public class MusicStoreServlet extends HttpServlet
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
 		String artistId = request.getParameter("artistId"); 
-		/*
+		
 		Artist artistToUpdate = new Artist(); 
 		artistToUpdate.setAritstId(Long.parseLong(artistId));
 		artistToUpdate.setFirstName(firstName);
@@ -130,28 +139,28 @@ public class MusicStoreServlet extends HttpServlet
 		
 		System.out.println("ArtistId: " + artistId + "; First name: " + firstName + "; Last name: " + lastName);
 		System.out.println("Updated artist: " + artistId);
-		*/
+	
 	}
 
 	private void deleteArtist(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		String artistId = request.getParameter("artistId");
-	/*	
+		
 		JdbcArtistDao artistDao = new JdbcArtistDao();
 		artistDao.remove(Long.parseLong(artistId));
 		
 		System.out.println("Removed artist: " + artistId);
-	*/
+
 	}
 	
 	private void createArtist(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	{
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
-		/*
+	
 		JdbcArtistDao artistDao = new JdbcArtistDao(); 
 		artistDao.add(new Artist(firstName, lastName));
-		*/
+	
 		System.out.println("Added artist: {first_name='" + firstName + "';last_name='" + lastName + "'}");
 	}
 	
@@ -162,7 +171,7 @@ public class MusicStoreServlet extends HttpServlet
 		String genre = request.getParameter("genre");
 		String imgUrl = request.getParameter("img_url");
 		String artistId = request.getParameter("artist");
-		/*
+		
 		Album newAlbum = new Album(); 
 		newAlbum.setTitle(title);
 		newAlbum.setPrice(Double.parseDouble(price));
@@ -172,9 +181,9 @@ public class MusicStoreServlet extends HttpServlet
 		
 		JdbcAlbumDao albumDao = new JdbcAlbumDao(); 
 		albumDao.add(newAlbum);
-		*/
-		//System.out.println(newAlbum.toString());
-		// System.out.println(String.format("Album{title=%s, price=%s, genre=%s, artistId=%s}", title, price, genre, artistId));
+	
+		System.out.println(newAlbum.toString());
+		System.out.println(String.format("Album{title=%s, price=%s, genre=%s, artistId=%s}", title, price, genre, artistId));
 	}
 	
 	private void updateAlbum(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
@@ -185,7 +194,7 @@ public class MusicStoreServlet extends HttpServlet
 		String imgUrl = request.getParameter("img_url");
 		String genre = request.getParameter("genre");
 		String artistId = request.getParameter("artist");
-		/*
+		
 		Album updatedAlbum = new Album();
 		updatedAlbum.setAlbumId(Long.parseLong(albumId));
 		updatedAlbum.setTitle(title);
@@ -200,17 +209,17 @@ public class MusicStoreServlet extends HttpServlet
 		albumDao.update(updatedAlbum);
 		
 		System.out.println(updatedAlbum.toString());
-	*/
+
 	}
 	
 	private void deleteAlbum(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		String albumId = request.getParameter("albumId");
-		/*
+	
 		JdbcAlbumDao albumDao = new JdbcAlbumDao(); 
 		albumDao.remove(Long.parseLong(albumId));
 				
 		System.out.println("Removed album: " + albumId);
-		*/
+	
 	}
 }

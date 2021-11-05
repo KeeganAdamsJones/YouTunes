@@ -1,57 +1,76 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
-<%@page import="java.util.List"%>
-<%@page import="java.util.Iterator"%>
-<!--  *** add imports for youtunes and the use bean for artist dao -->
-
+    pageEncoding="UTF-8"%>
+    
+<%@page import="youtunes.Artist" %>
+    
+<jsp:useBean id="artistDao" scope="application" class="youtunes.JdbcArtistDao" />
 
 <!DOCTYPE html>
+
+<!-- 
+Keegan Jones
+ -->
+ 
+ 
 <html>
 <head>
-<meta charset="UTF-8">
-<title>YouTunes | Artist List</title>
-
-
-<link
-	rel="stylesheet" href="site.css">
-	
-	<!-- *** example for linking to a bootstrap css if I choose to 
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous"
-	-->
+	<meta charset="UTF-8">
+	<title>YouTunes | Artist Details</title>
+	<link
+		rel="stylesheet" href="../site.css">
 </head>
-<body>
-	<jsp:include page="../TopNav.jsp" flush="true" />
 
-	<div class="py-5 container width-35">
-	
-		<h2 class="text-center">Artist List</h2>
-		<br />
-		
-		<p class="text-center">
-			<a href="store?action=newArtist" class="btn btn-outline-secondary text-center w-50">New Artist</a>
-		</p>
-		
-		
-		<table class="table">
-			<thead>
-				<tr>
-					<th>ArtistId</th>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Functions</th>
-				</tr>
-			</thead>
-		
-			<!-- **** Add list of artists via artist dao and itterate through to display -->
-					
-		
-		</table>
+<body>
+	<div class='logo'>
+		<img src="../images/youTunesLogo.jpeg" alt="YouTunes Logo" width="200" height="148">
 	</div>
 
-	<jsp:include page="../Footer.jsp" flush="true" />
-	<jsp:include page="../ScriptFooter.jsp" flush="true" />
+<jsp:include page="../TopNav.jsp" flush="true" />
+
+<div class="container py-5 width-35">
+	<h2>Artist Details</h2>
+	
+	<% 
+		try 
+		{
+			String artistId = request.getParameter("artistId");
+			Artist artist = artistDao.find(Long.parseLong(artistId)); 
+			
+			if (artist != null)
+			{
+			%>
+				<form>
+					<input type="hidden" name="action" value="updateArtist" />
+					<input type="hidden" name="artistId" value="<%=artist.getArtistId() %>" />
+					
+					<div class="mb-3">
+						<label for="firstName" class="form-label">First name</label>
+						<input type="text" class="form-control" id="firstName" name="firstName" value="<%=artist.getFirstName() %>" />
+					</div>
+					
+					<div class="mb-3">
+						<label for="lastName" class="form-label">Last name</label>
+						<input type="text" class="form-control" id="lastName" name="lastName" value="<%=artist.getLastName() %>" />
+					</div>
+					
+					<button type="submit" class="btn btn-primary float-end">Save</button>
+				</form>
+				<%
+				System.out.println(artist.getFirstName());
+			}
+		}
+		catch (Exception ex)
+		{
+			System.out.println(ex.getMessage());
+		}
+		
+	%>
+	<br />
+	<br />
+	<a href="store?action=showArtists">Return to artists</a>
+</div>
+
+
+
 </body>
 </html>

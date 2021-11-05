@@ -16,8 +16,12 @@
 .welcome {
 	display: flex;
 	justify-content: center;
-	font-size: 400%;
+	font-size: 150%;
 
+}
+
+.foot {
+	color: #333;
 }
 
 /* The box around the topnav */
@@ -57,7 +61,33 @@ p {
   margin-left:auto;
   margin-right:auto;
   text-align:center;
-  width: 600px; 
+
 }  
 
+#hearFromYou {
+	justify-content: center;
+	color: #444;
+}
 
+.card-img-top {
+	display:inline;
+	vertical-align:middle;
+}
+
+.card-body {
+	display:inline;
+	height: 100px;
+    width: 100px;
+    vertical-align: top;
+}
+
+.album-text {
+    display: inline-block;
+    background-color: #eee;
+    height: 100px;
+    width: 100px;
+    vertical-align: middle;
+}
+.album-details {
+	display:inline-block;
+}

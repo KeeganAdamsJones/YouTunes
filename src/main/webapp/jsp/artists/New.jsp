@@ -2,6 +2,9 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
+<!-- 
+Keegan Jones
+ -->
 
 <html>
 <head>
@@ -9,7 +12,7 @@
 <title>YouTunes | New Artist</title>
 
 <link
-		rel="stylesheet" href="site.css">
+		rel="stylesheet" href="../site.css">
 		
 		<!-- *** example for linking to a bootstrap css if I choose to 
 		href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
@@ -20,6 +23,10 @@
 
 
 <body>
+	<div class='logo'>
+		<img src="../images/youTunesLogo.jpeg" alt="YouTunes Logo" width="200" height="148">
+	</div>
+
 <jsp:include page="../TopNav.jsp" flush="true" />
 
 <div class="container py-5 width-35">
@@ -44,7 +51,7 @@
 	<a href="store?action=showArtists">Return to artists</a>
 </div>
 
-<jsp:include page="../ScriptFooter.jsp" flush="true" />
+
 
 </body>
 </html>

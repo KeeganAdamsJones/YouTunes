@@ -1,16 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<!-- 
+Keegan Jones
+ -->
+ 
 <html>
+
 <header>
 	<div class="TopNav">
-		<a class="active" href="#home">Home</a>
-  		<a href="../artists/List.jsp">Artists</a>
-  			<!-- <a class="logo-image">
-            	<img src="images/youTunesLogo.jpeg" alt="YouTunes Logo" width="25" height="18" class="img-fluid">
-  			 -->
-  		<a href="../Contact.jsp">Contact Us</a>
-  		<a href="../About.jsp">About Us</a>
+		<a class="active" href="/youtunes/store">Home</a>
+  		<a href="/youtunes/store/?action=showArtists">Artists</a>
+  			
+  		<a href="/youtunes/store/?action=showContactUs">Contact Us</a>
+  		<a href="/youtunes/store/?action=showAboutUs">About Us</a>
 	</div>
 </header>
 

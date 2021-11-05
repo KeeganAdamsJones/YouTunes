@@ -1,8 +1,11 @@
-package youtunes.service;
+package youtunes;
 
 import java.util.List;
 
-/* This is an interface file with 4 operations (CRUD, create, read, updatd, delete):
+/* 
+Keegan Jones
+
+This is an interface file with 4 operations (CRUD, create, read, updatd, delete):
 add(E entity), List<E> list(), E find(K key), update(E entity), and remove(K key). 
 For the interface's signature, use Generics. For example, “GenericDao<E, K>”. 
 This will allow us to extend this interface by supplying our own entities. 
