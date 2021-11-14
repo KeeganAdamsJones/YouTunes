@@ -72,10 +72,10 @@ CSD - 460 Capstone
 						Album album = (Album)iterator.next();
 				%>
 				
-				<div class="row">
-					<div class="card">
+				<div class="home-albums">
+					<div class="home-albums">
 						
-						<div class="card-body">
+						<div class="home-albums">
 						    <img src="<%=album.getImgUrl()%>" alt="Album Cover Art" height="100" class="card-img-top" />
 						
 							<p class="album-text">

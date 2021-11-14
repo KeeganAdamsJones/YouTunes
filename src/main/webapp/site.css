@@ -91,3 +91,8 @@ p {
 .album-details {
 	display:inline-block;
 }
+
+.artist-list {
+	margin-left: auto;
+	margin-right: auto;
+}

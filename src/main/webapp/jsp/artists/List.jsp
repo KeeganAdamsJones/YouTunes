@@ -40,16 +40,17 @@ Keegan Jones
 		</p>
 		
 		
-		<table class="table">
-			<thead>
-				<tr>
-					<th>ArtistId</th>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Functions</th>
-				</tr>
-			</thead>
-			
+		
+			<table class="artist-list">
+				<thead>
+					<tr>
+						<th>ArtistId</th>
+						<th>First Name</th>
+						<th>Last Name</th>
+						<th>Functions</th>
+					</tr>
+				</thead>
+		
 			
 			
 			<%
@@ -77,6 +78,7 @@ Keegan Jones
 				<% } %>
 					
 		</table>
+		
 	</div>
 
 	<jsp:include page="../Footer.jsp" flush="true" />
